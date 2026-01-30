@@ -9,7 +9,7 @@
 ```
 
 
-#For example, setting a atomic value (only one type = scalar) to an object (scalar object) we do this with the *<-* or *=* symbols. This 
+#For example, setting a atomic value (only one type = scalar) to an object (scalar object) we do this with the *<-* or *=* symbols.
 
 x <- 2  
 y = 3  
@@ -23,7 +23,7 @@ x/y  # returns 0.6666
 x * y  # returns 6
 ```
 
-#We can also save scalar objects with non-numeric data. For example we can set an object equal to a character string by do this by putting it in quotes
+#We can also save scalar objects with non-numeric data. For example, we can set an object equal to a character string by do this by putting it in quotes
 
 name <- "GB"
 seven <- "7"
@@ -136,9 +136,6 @@ t[!t == 2] # multiple ways to do the same thing
 1 %in% t
 
 
-
-
-
 ### Data types
 
 #we will now explore more advanced data objects, we have already seen scalar and vector we will explore *matrices* and *dataframes*. Other data types like *lists* are useful for some purposes, but we will look at them later. 
@@ -181,7 +178,7 @@ mat2[5]  # returns the 5th element of the matrix i.e. row 2 column 2
 ```
 
 
-#R allows you to take a shortcut by specifying `[rows,columns]`
+#R allows us to take a shortcut by specifying `[rows,columns]`
 
 mat2[1, 3]  # returns the element in row 1 column 3
 
