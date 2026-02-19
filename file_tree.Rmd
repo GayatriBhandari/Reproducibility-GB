@@ -1,0 +1,16 @@
+library(fs)
+Gayatri BHANDARI 
+
+#file_tree
+├── coding challenge 3 classwork data visulization.R
+├── Data visualization from video part 2.R
+├── data.qmd
+├── Intro lab homework Assignment.qmd
+├── Intro.Rmd
+├── IntroR code
+├── master.R
+├── MycotoxinData.csv
+├── r markdown tutorial.Rmd
+├── r-markdown-tutorial.html
+├── README.md
+└── Reproducibility-GB.Rproj
