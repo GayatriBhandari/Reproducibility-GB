@@ -41,7 +41,7 @@ cbbpalette <-c ("#56B4E9", "#009E73")
 Plot2 <- ggplot(mycotoxin, aes(x = Treatment, y = X15ADON, fill = Cultivar)) +
   geom_boxplot() + # add boxplot layer
   xlab("") + # xlabel empty 
-  ylab("15XADON") + # y label
+  ylab("15ADON") + # y label
   geom_point(alpha = 0.6,pch = 21, color = "black", position = position_jitterdodge()) +
   scale_fill_manual(values = cbbPalette)+ # transparency of the jittered points to 0.6. #Jitter points over the boxplot and fill the points and boxplots Cultivar with two colors from the cbbPallete 
   facet_wrap(~Cultivar)+ #faceted by Cultivar
