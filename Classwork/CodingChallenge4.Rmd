@@ -1,0 +1,174 @@
+---
+title: "CodingChallenge4"
+author: "GB"
+date: "2026-02-22"
+output:
+  html_document: default
+  word_document: default
+  pdf_document: default
+---
+insta---
+title: "Coding Practice 4"
+author: "Prativa Chhetri"
+date: "2025-02-26"
+output:
+  pdf_document: null
+  html_document:
+    toc: true
+    toc_float: true
+    word_document: null
+  md_document:
+    variant: gfm
+  word_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(ggplot2)
+library(markdown)
+
+```
+
+
+
+
+
+```{r}
+library(knitr)
+library(ggplot2)
+library(markdown)
+library(tinytex)
+```
+
+- [Link to my paper]("C:\Users\gzb0078\OneDrive - Auburn University\Documents\Reproducibility-GB\papers\fungus_paper.pdf")
+
+
+- [Paper](papers/fungus_paper.pdf)
+
+
+
+```{r}
+mycotoxin<- read.csv(file.choose(), na.strings = "na")
+head(mycotoxin)
+
+library(ggplot2)
+cbbPalette <- c("#56B4E9", "#009E73")
+
+library(ggrepel)
+
+```
+
+#Ques5
+#DON_PLOT1
+
+```{r}
+
+Plot1 <- ggplot(mycotoxin, aes(x = Treatment, y = DON, fill = Cultivar)) + 
+  geom_boxplot() + # add boxplot layer 
+  xlab("") +  
+  ylab("DON (ppm)") + # y label 
+  geom_point(alpha = 0.6,pch = 21, color = "black", position = position_jitterdodge()) + 
+  scale_fill_manual(values = cbbPalette)+ # transparency of the jittered points to 0.6. #Jitter points over the boxplot and fill the points and boxplots Cultivar with two colors from the cbbPallete  
+  facet_wrap(~Cultivar)+ #faceted by Cultivar 
+  theme_classic() # for classic theme  
+
+Plot1
+```
+
+#15ADON
+```{r}
+Plot2 <- ggplot(mycotoxin, aes(x=Treatment, y=X15ADON, fill= Cultivar))+
+  geom_boxplot()+
+  xlab("")+
+  ylab("15ADON")+
+  geom_point(alpha=0.6,pch=21, color="black", position= position_jitterdodge())+
+  facet_wrap(~Cultivar)+
+  theme_classic()
+
+Plot2
+```
+
+#MassperSeed_mg_PLOT3
+
+```{r}
+
+Plot3 <- ggplot(mycotoxin, aes(x = Treatment, y = MassperSeed_mg, fill = Cultivar)) +
+  geom_boxplot() + # add boxplot layer
+  xlab("") +  
+  ylab("Seed Mass (mg)") + # y label
+  geom_point(alpha = 0.6,pch = 21, color = "black", position = position_jitterdodge()) +
+  scale_fill_manual(values = cbbPalette)+ # transparency of the jittered points to 0.6. #Jitter points over the boxplot and fill the points and boxplots Cultivar with two colors from the cbbPallete 
+  facet_wrap(~Cultivar)+ #faceted by Cultivar
+  theme_classic() # for classic theme 
+
+Plot3
+```
+#3Combined_PLOT
+
+```{r}
+
+install.packages("ggpubr")
+
+library(ggpubr)
+
+figure=ggarrange(
+  Plot1,
+  Plot2,
+  Plot3,
+  labels = c("A", "B", "C"),
+  nrow = 1,
+  ncol = 3,
+  common.legend=TRUE
+)
+
+figure
+```
+#Ques5
+## Plot 1: plot1 with pairwise comparisons
+
+```{r}
+ 
+Plot1_pwc <- Plot1 +
+  geom_pwc(aes(group = Treatment), method = "t.test", label = "p.adj.format") +  # Add pairwise t-tests
+  theme_classic()
+
+Plot1_pwc
+```
+##Plot 2: plot2 with pairwise comparisons
+
+```{r}
+
+Plot2_pwc <- Plot2 +
+  geom_pwc(aes(group=Treatment), method= "t.test", label= "p.adj.format")+
+  theme_classic()
+
+Plot2_pwc
+```
+##Plot 3: plot3 with pairwise comparisons
+
+```{r}
+Plot3_pwc <- Plot3 + geom_pwc(aes(group=Treatment), method = "t.test", label = "p.adj.format")+
+  theme_classic()
+Plot3_pwc
+
+```
+#Combine all three plots with a common legend
+```{r}
+
+Combined_pwc =ggarrange(
+  Plot1_pwc,
+  Plot2_pwc,
+  Plot3_pwc,
+  labels = c("D", "E", "F"),
+  nrow = 1,
+  ncol = 3,
+  common.legend=TRUE
+)
+
+Combined_pwc
+```
+
+
+
