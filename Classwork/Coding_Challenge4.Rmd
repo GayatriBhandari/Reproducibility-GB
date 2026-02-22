@@ -34,6 +34,8 @@ library(markdown)
 library(tinytex)
 ```
 
+#Link to my paper
+
 - [Link to my paper]("C:\Users\gzb0078\OneDrive - Auburn University\Documents\Reproducibility-GB\papers\fungus_paper.pdf")
 
 
@@ -53,7 +55,7 @@ library(ggrepel)
 ```
 
 #Ques5
-#DON_PLOT1
+##DON_PLOT1
 
 ```{r}
 
@@ -69,7 +71,7 @@ Plot1 <- ggplot(mycotoxin, aes(x = Treatment, y = DON, fill = Cultivar)) +
 Plot1
 ```
 
-#15ADON
+##15ADON
 ```{r}
 Plot2 <- ggplot(mycotoxin, aes(x=Treatment, y=X15ADON, fill= Cultivar))+
   geom_boxplot()+
@@ -82,7 +84,7 @@ Plot2 <- ggplot(mycotoxin, aes(x=Treatment, y=X15ADON, fill= Cultivar))+
 Plot2
 ```
 
-#MassperSeed_mg_PLOT3
+##MassperSeed_mg_PLOT3
 
 ```{r}
 
@@ -97,7 +99,7 @@ Plot3 <- ggplot(mycotoxin, aes(x = Treatment, y = MassperSeed_mg, fill = Cultiva
 
 Plot3
 ```
-#3Combined_PLOT
+##3Combined_PLOT
 
 ```{r}
 
@@ -117,8 +119,8 @@ figure=ggarrange(
 
 figure
 ```
-#Ques5
-## Plot 1: plot1 with pairwise comparisons
+
+### Plot 1: plot1 with pairwise comparisons
 
 ```{r}
  
@@ -128,7 +130,7 @@ Plot1_pwc <- Plot1 +
 
 Plot1_pwc
 ```
-##Plot 2: plot2 with pairwise comparisons
+###Plot 2: plot2 with pairwise comparisons
 
 ```{r}
 
@@ -138,7 +140,7 @@ Plot2_pwc <- Plot2 +
 
 Plot2_pwc
 ```
-##Plot 3: plot3 with pairwise comparisons
+###Plot 3: plot3 with pairwise comparisons
 
 ```{r}
 Plot3_pwc <- Plot3 + geom_pwc(aes(group=Treatment), method = "t.test", label = "p.adj.format")+
@@ -146,7 +148,7 @@ Plot3_pwc <- Plot3 + geom_pwc(aes(group=Treatment), method = "t.test", label = "
 Plot3_pwc
 
 ```
-#Combine all three plots with a common legend
+##Combine all three plots with a common legend
 ```{r}
 
 Combined_pwc =ggarrange(
