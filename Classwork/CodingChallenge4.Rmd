@@ -9,8 +9,8 @@ output:
 ---
 insta---
 title: "Coding Practice 4"
-author: "Prativa Chhetri"
-date: "2025-02-26"
+author: "GB"
+date: "2026-02-21"
 output:
   pdf_document: null
   html_document:
