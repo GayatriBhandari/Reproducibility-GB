@@ -1,0 +1,30 @@
+---
+title: "Code4"
+author: "GB"
+date: "2026-02-19"
+output:
+  word_document: default
+  html_document: default
+---
+
+
+```{r}
+summary(cars)
+```
+
+# Image
+![fungus](C:/Users/gzb0078/OneDrive - Auburn University/Desktop/fungus.jpg)
+
+# Link
+[link  to my github](https://github.com/GayatriBhandari/Reproducibility-GB.git)
+
+```{r}
+install.packages("kable")
+library(kable)
+
+install.packages("knitr")
+library(knitr)
+
+kable(head(mtcars, n = 5), digits = 3, format = "markdown")
+```
+
