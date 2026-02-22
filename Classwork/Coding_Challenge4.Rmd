@@ -1,13 +1,13 @@
 ---
 title: "CodingChallenge4"
 author: "GB"
-date: "2026-02-22"
+date: "2026-02-21"
 output:
-  pdf_document: null
   html_document:
     toc: true
     toc_float: true
     word_document: null
+  pdf_document: null
   md_document:
     variant: gfm
   word_document:
