@@ -3,15 +3,6 @@ title: "CodingChallenge4"
 author: "GB"
 date: "2026-02-22"
 output:
-  html_document: default
-  word_document: default
-  pdf_document: default
----
-insta---
-title: "Coding Practice 4"
-author: "GB"
-date: "2026-02-21"
-output:
   pdf_document: null
   html_document:
     toc: true
@@ -22,6 +13,7 @@ output:
   word_document:
     toc: true
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
