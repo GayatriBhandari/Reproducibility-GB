@@ -1,17 +1,15 @@
 [Readme](CodingChallenge4_Classwork.md)
 
 ```
-Classwork
+├── Classwork
+│   ├── code visualization homework 2 mycotoxin.qmd
 │   ├── coding challenge 3 classwork data visulization.R
 │   ├── Coding challenge 3 data visualization class work.R
 │   ├── coding challenge 3 data visualization classwork.qmd
-│   └── Coding_Challenge4.Rmd
-├── code visualization homework 2 mycotoxin.qmd
-├── code visualization mycotoxin.qmd
-├── coding challenge 3 classwork data visulization.R
-├── CodingChallenge4 (1).Rmd
-├── CodingChallenge4_Classwork.html
+│   ├── Coding_Challenge4.Rmd
+│   └── Intro lab Assignment.qmd
 ├── CodingChallenge4_Classwork_files
+│   ├── CodingChallenge4_Classwork.html
 │   ├── CodingChallenge4_Classwork.md
 │   ├── CodingChallenge4_Classwork.pdf
 │   ├── CodingChallenge4_Classwork.Rmd
@@ -24,7 +22,6 @@ Classwork
 │       ├── unnamed-chunk-6-2.png
 │       ├── unnamed-chunk-6-3.png
 │       └── unnamed-chunk-6-4.png
-├── Coding_Challenge4.Rmd
 ├── data
 │   └── MycotoxinData.csv
 ├── Doc file
@@ -41,7 +38,6 @@ Classwork
 │   ├── Project Proposal.docx
 │   ├── Rmarkdown_Homework.docx
 │   └── Rmarkdown_HW.docx
-├── file tree.Rmd
 ├── Homework
 │   ├── code visualization mycotoxin.qmd
 │   ├── Coding Challenge 2 Data visualization.R
@@ -62,16 +58,10 @@ Classwork
 │   ├── R markdown script all.R
 │   ├── r markdown tutorial.Rmd
 │   └── rmd.Rmd
-├── Intro lab Assignment.qmd
-├── Intro.Rmd
-├── IntroR code
 ├── master.R
 ├── papers
 │   └── fungus_paper.pdf
-├── r markdown tutorial.Rmd
 ├── README.html
 ├── README.md
-├── Reproducibility-GB.Rproj
-└── rmd.Rmd
-
+└── Reproducibility-GB.Rproj
 ```
