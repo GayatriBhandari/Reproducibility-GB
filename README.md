@@ -1,7 +1,7 @@
 [Readme](CodingChallenge4_Classwork.md)
 
 ```
-├── Classwork
+Classwork
 │   ├── coding challenge 3 classwork data visulization.R
 │   ├── Coding challenge 3 data visualization class work.R
 │   ├── coding challenge 3 data visualization classwork.qmd
@@ -11,14 +11,19 @@
 ├── coding challenge 3 classwork data visulization.R
 ├── CodingChallenge4 (1).Rmd
 ├── CodingChallenge4_Classwork.html
-├── CodingChallenge4_Classwork.md
-├── CodingChallenge4_Classwork.Rmd
 ├── CodingChallenge4_Classwork_files
-│   ├── figure-gfm
-│   │   ├── unnamed-chunk-2-1.png
-│   │   ├── unnamed-chunk-3-1.png
-│   │   └── unnamed-chunk-4-1.png
-│   └── figure-html
+│   ├── CodingChallenge4_Classwork.md
+│   ├── CodingChallenge4_Classwork.pdf
+│   ├── CodingChallenge4_Classwork.Rmd
+│   └── figure-gfm
+│       ├── unnamed-chunk-2-1.png
+│       ├── unnamed-chunk-3-1.png
+│       ├── unnamed-chunk-4-1.png
+│       ├── unnamed-chunk-5-1.png
+│       ├── unnamed-chunk-6-1.png
+│       ├── unnamed-chunk-6-2.png
+│       ├── unnamed-chunk-6-3.png
+│       └── unnamed-chunk-6-4.png
 ├── Coding_Challenge4.Rmd
 ├── data
 │   └── MycotoxinData.csv
@@ -40,8 +45,6 @@
 ├── Homework
 │   ├── code visualization mycotoxin.qmd
 │   ├── Coding Challenge 2 Data visualization.R
-│   ├── coding_challenge_4.html
-│   ├── coding_challenge_4.Rmd
 │   ├── Data visualization from video 2.txt
 │   ├── Data visualization from video part 2.R
 │   ├── Data visualization homework 2.R
@@ -58,7 +61,6 @@
 │   ├── master.R
 │   ├── R markdown script all.R
 │   ├── r markdown tutorial.Rmd
-│   ├── r-markdown-tutorial.html
 │   └── rmd.Rmd
 ├── Intro lab Assignment.qmd
 ├── Intro.Rmd
@@ -67,6 +69,7 @@
 ├── papers
 │   └── fungus_paper.pdf
 ├── r markdown tutorial.Rmd
+├── README.html
 ├── README.md
 ├── Reproducibility-GB.Rproj
 └── rmd.Rmd
