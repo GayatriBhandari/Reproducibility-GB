@@ -1,1 +1,0 @@
-Hi, I am Gayatri Bhandari, a Master student in Lawrence Lab and graduating in summer 2026. 
