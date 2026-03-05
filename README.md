@@ -1,7 +1,7 @@
 [Readme](CodingChallenge4_Classwork.md)
 
 ```
-├── Classwork
+Classwork
 │   ├── code visualization homework 2 mycotoxin.qmd
 │   ├── coding challenge 3 classwork data visulization.R
 │   ├── Coding challenge 3 data visualization class work.R
@@ -9,20 +9,22 @@
 │   ├── Coding_Challenge4.Rmd
 │   └── Intro lab Assignment.qmd
 ├── CodingChallenge4_Classwork_files
-│   ├── CodingChallenge4_Classwork.html
+│   ├── CodingChallenge4_Classwork.log
 │   ├── CodingChallenge4_Classwork.md
 │   ├── CodingChallenge4_Classwork.pdf
 │   ├── CodingChallenge4_Classwork.Rmd
+│   ├── CodingChallenge4_Classwork.tex
 │   └── figure-gfm
-│       ├── unnamed-chunk-2-1.png
-│       ├── unnamed-chunk-3-1.png
-│       ├── unnamed-chunk-4-1.png
-│       ├── unnamed-chunk-5-1.png
-│       ├── unnamed-chunk-6-1.png
-│       ├── unnamed-chunk-6-2.png
-│       ├── unnamed-chunk-6-3.png
-│       └── unnamed-chunk-6-4.png
+│       ├── 2026-codingchallenge4(1).png
+│       ├── 2026-codingchallenge4(2).png
+│       ├── 2026-codingchallenge4(3).png
+│       ├── 2026-codingchallenge4(4).png
+│       ├── 2026-codingchallenge4(5).png
+│       ├── 2026-codingchallenge4(6).png
+│       ├── 2026-codingchallenge4(7).png
+│       └── 2026-codingchallenge4(8).png
 ├── data
+│   ├── Bull_richness.csv
 │   └── MycotoxinData.csv
 ├── Doc file
 │   ├── Assignment 2 - code.docx
@@ -47,6 +49,8 @@
 │   ├── Data visualization homework part 1.R
 │   ├── data.qmd
 │   ├── data.R
+│   ├── DataWrangling.pdf
+│   ├── DataWrangling.Rmd
 │   ├── file-tree.html
 │   ├── file_tree.Rmd
 │   ├── Intro lab homework Assignment.qmd
@@ -61,7 +65,6 @@
 ├── master.R
 ├── papers
 │   └── fungus_paper.pdf
-├── README.html
 ├── README.md
 └── Reproducibility-GB.Rproj
 ```
