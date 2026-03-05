@@ -62,7 +62,6 @@ Classwork
 │   ├── R markdown script all.R
 │   ├── r markdown tutorial.Rmd
 │   └── rmd.Rmd
-├── master.R
 ├── papers
 │   └── fungus_paper.pdf
 ├── README.md
