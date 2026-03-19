@@ -1,0 +1,91 @@
+---
+title: "CodingChallenge5"
+author: "GB"
+date: "2026-03-19"
+output:
+  word_document:
+     toc: true 
+  md_document:
+    variant: gfm
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+## Question 1
+```{r}
+DiversityData <-read.csv(file.choose())
+Metadata<- read.csv(file.choose())
+head(DiversityData)
+head(Metadata)
+```
+# Question 2
+Join the two dataframes together by the common column ‘Code’.
+```{r}
+alpha <- merge(DiversityData, Metadata, by = "Code")
+colnames(alpha)
+head(alpha)
+```
+# Question 3
+Calculate Pielou’s evenness index: Pielou’s evenness is an ecological parameter calculated by
+the Shannon diversity index (column Shannon) divided by the log of the richness column.
+
+Using mutate, create a new column to calculate Pielou’s evenness index.
+```{r}
+library(dplyr)
+alpha_even <- alpha %>%
+  mutate(Pielou_evenness = shannon / log(richness))
+colnames(alpha_even)
+```
+# Question 4
+Using tidyverse language of functions and the pipe, use the summarise function and tell me
+the mean and standard error evenness grouped by crop over time.
+```{r}
+library(tidyverse)
+alpha_average <- alpha_even %>%
+  group_by(Crop, Time_Point) %>%
+  summarise(
+    Mean.even = mean(Pielou_evenness),
+    n = n(),
+    sd.dev = sd(Pielou_evenness)
+  ) %>%
+  mutate(std.err = sd.dev / sqrt(n))
+```
+# Question 5
+Select relevant columns: select the columns Time_Point, Crop, and mean.even.
+Reshape the data: Use the pivot_wider function to transform the data from long to wide format, creating new columns for each Crop with values from mean.even.
+Calculate the difference between the soybean column, the soil column, and the difference between the cotton column and the soil column
+```{r}
+alpha_average2 <- alpha_average %>%
+  select(Time_Point, Crop, Mean.even) %>%
+  pivot_wider(names_from = Crop, values_from = Mean.even) %>%
+  mutate(
+    diff.cotton.even = Soil - Cotton,
+    diff.soybean.even = Soil - Soybean
+  )
+
+head(alpha_average2)
+```
+
+# Question 6
+
+Select relevant columns: select the columns Time_Point, diff.cotton.even, and diff.soybean.even.
+Reshape the data: Use the pivot_longer function to transform the data from wide to long format, creating a new column named diff that contains the values from diff.cotton.even and diff.soybean.even.
+```{r}
+plot_data <- alpha_average2 %>%
+  select(Time_Point, diff.cotton.even, diff.soybean.even) %>%
+  pivot_longer(
+    c(diff.cotton.even, diff.soybean.even),
+    names_to = "diff"
+  )
+```
+
+```{r}
+ggplot(plot_data, aes(x = Time_Point, y = value, color = diff)) +
+  geom_line() +
+  theme_minimal(base_size = 8, base_family = "Arial") + theme(panel.grid = element_blank(), axis.line = element_line(colour = "Black")) + labs(x = "Time (hrs)",
+    y = "Difference from soil in Pielou's evenness",
+    color = "diff"
+  )
+
+```
+
