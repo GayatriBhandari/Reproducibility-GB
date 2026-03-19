@@ -100,7 +100,7 @@ seq_along(LETTERS[1:5]) # will return 1,2,3,4,5 not the actual letters.
 ```
 
 #The for loop
-The for loop is classic coding. Almost every coding language has a version of a for loop.
+The for loop is classic coding.Almost every coding language has a version of a for loop.
 
 Lets see a very basic example of how a for loop works
 
