@@ -26,7 +26,7 @@ Others (or your future self) can understand and reproduce the analysis by runnin
 
 In your own words, describe: 
 
-##1) 
+(1)
 how to write a function in R 
 Ans: A function in R is a reusable block of code designed to perform a specific task.
 - Basic syntax: We define a function  by   assigning  it  a name and using the function() keyword, with inputs(arguments) inside parentheses. 
@@ -35,7 +35,7 @@ Ans: A function in R is a reusable block of code designed to perform a specific 
 
 Simply, we give the function inputs, it performs operations, and it oitputs a result. 
 
-##2)
+(2)
 how to write a for loop in R. In your answer, be specific about: basic syntax, where the
 code is written, and how results are returned or stored. (Answer in plain text; no code
 required for this question.)
