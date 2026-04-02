@@ -11,7 +11,7 @@ output:
     df_print: paged
   pdf_document: default
 ---
-## Question 1
+# Question 1
 ```{r}
 DiversityData <-read.csv(file.choose())
 Metadata<- read.csv(file.choose())
@@ -86,6 +86,8 @@ ggplot(plot_data, aes(x = Time_Point, y = value, color = diff)) +
     y = "Difference from soil in Pielou's evenness",
     color = "diff"
   )
-
 ```
+
+# Question 7
+[Coding Challenge 5](https://github.com/GayatriBhandari/Reproducibility-GB.git)
 
