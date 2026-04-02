@@ -262,3 +262,6 @@ The intercept represents the mean emergence for the reference treatment
 at the reference day level, and the coefficient for Treatment 2 shows
 how much emergence differs from the reference treatment after adjusting
 for DaysAfterPlanting.
+
+\#Question6
+[Github](https://github.com/GayatriBhandari/Reproducibility-GB/tree/main/CodingChallenge7)
