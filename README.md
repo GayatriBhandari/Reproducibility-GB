@@ -1,13 +1,17 @@
 [Readme](CodingChallenge4_Classwork.md)
 
 ```
-Classwork
+├── Classwork
 │   ├── code visualization homework 2 mycotoxin.qmd
 │   ├── coding challenge 3 classwork data visulization.R
 │   ├── Coding challenge 3 data visualization class work.R
 │   ├── coding challenge 3 data visualization classwork.qmd
 │   ├── Coding_Challenge4.Rmd
-│   └── Intro lab Assignment.qmd
+│   ├── Intro lab Assignment.qmd
+│   ├── LoopsAndFunctions.docx
+│   ├── LoopsAndFunctions.md
+│   ├── LoopsAndFunctions.pdf
+│   └── LoopsAndFunctions.Rmd
 ├── CodingChallenge4_Classwork_files
 │   ├── CodingChallenge4_Classwork.log
 │   ├── CodingChallenge4_Classwork.md
@@ -23,8 +27,30 @@ Classwork
 │       ├── 2026-codingchallenge4(6).png
 │       ├── 2026-codingchallenge4(7).png
 │       └── 2026-codingchallenge4(8).png
+├── CodingChallenge5
+│   ├── CodingChallenge5.docx
+│   ├── CodingChallenge5.Rmd
+│   └── picture
+│       └── figure-latex
+│           ├── unnamed-chunk-6-1.pdf
+│           └── unnamed-chunk-7-1.pdf
+├── CodingChallenge6
+│   ├── CodingChallenge6_IterationsAndFunctions.md
+│   ├── CodingChallenge6_IterationsAndFunctions.pdf
+│   └── CodingChallenge6_IterationsAndFunctions.Rmd
+├── CodingChallenge7
+│   ├── CodingChallenge7.docx
+│   ├── CodingChallenge7.log
+│   ├── CodingChallenge7.md
+│   ├── CodingChallenge7.Rmd
+│   ├── CodingChallenge7.tex
+│   └── graph.png
 ├── data
 │   ├── Bull_richness.csv
+│   ├── Cities.csv
+│   ├── DiversityData.csv
+│   ├── EC50_all.csv
+│   ├── Metadata.csv
 │   └── MycotoxinData.csv
 ├── Doc file
 │   ├── Assignment 2 - code.docx
@@ -57,6 +83,22 @@ Classwork
 │   ├── Intro.Rmd
 │   ├── IntroR code
 │   ├── IntroR code.txt
+│   ├── LinearModel.md
+│   ├── LinearModel.pdf
+│   ├── LinearModel.Rmd
+│   ├── LinearModel_files
+│   │   ├── figure-gfm
+│   │   │   ├── unnamed-chunk-11-1.png
+│   │   │   ├── unnamed-chunk-17-1.png
+│   │   │   ├── unnamed-chunk-3-1.png
+│   │   │   ├── unnamed-chunk-5-1.png
+│   │   │   └── unnamed-chunk-7-1.png
+│   │   └── figure-latex
+│   ├── LoopsAndFunctions_files
+│   │   ├── figure-docx
+│   │   ├── figure-gfm
+│   │   │   └── unnamed-chunk-18-1.png
+│   │   └── figure-latex
 │   ├── markdown_tutorial.Rmd
 │   ├── master.R
 │   ├── R markdown script all.R
