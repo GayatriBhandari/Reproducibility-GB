@@ -2,10 +2,10 @@
 title: "LinearModel_Homework"
 author: "GB"
 output: 
-  pdf_document:
-    toc: true
   md_document:
     variant: gfm
+  pdf_document:
+    toc: true
   html_document:
     df_print: paged
   word_document:

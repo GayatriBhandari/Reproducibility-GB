@@ -1,0 +1,37 @@
+---
+title: "Intro R Lab"
+author: "Gayatri"
+format: html
+editor: visual
+---
+
+## Lab Assignment 2: Intro R
+
+```{r}
+z<-{1:200}
+z
+mean(z)
+sd(z)
+zlog<-(z>30)
+zlog
+zdf<-data.frame(z,zlog)
+zdf
+colnames(zdf) <- c("zvec", "zlogic")
+zdf
+zdf$zsquared <- (zdf$zvec)^2
+zdf
+subset(zdf, zsquared>10  & zsquared<100)
+
+zdf$zsquared[(zdf$zsquared > 10) & (zdf$zsquared < 100)]
+
+zdf[26, ]
+zdf_row26 <- zdf[26, ] 
+zdf_row26
+
+zdf[180, "zsquared"]
+zsquared_180 <- zdf$zsquared[180]
+zsquared_180
+
+```
+
+# 

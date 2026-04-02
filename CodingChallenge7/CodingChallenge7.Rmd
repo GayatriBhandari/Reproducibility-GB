@@ -3,11 +3,11 @@ title: "CodingChallenge7"
 author: "GB"
 date: "2026-04-02"
 output: 
-  md_document:
-    variant: gfm
-  pdf_document: default
   html_document:
     df_print: paged
+  pdf_document: default
+  md_document:
+    variant: gfm
   word_document:
      toc: true 
 ---
