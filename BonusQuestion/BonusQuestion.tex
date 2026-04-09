@@ -201,7 +201,7 @@ head()
 
 ### Grouping and summarising
 confusing
-``{r} 
+
 microbiome.fungi %>%
   select(SampleID, Crop, Compartment:Fungicide, richness) %>%
   group_by(Treatment, Fungicide) %>%        # define groups
@@ -211,7 +211,7 @@ microbiome.fungi %>%
             sd.dev = sd(logRich)) %>%
   mutate(std.err = sd.dev / sqrt(n))
 
-# 2  explore a topic of your choice
+# 2 explore a topic of your choice
 
 Ans: I chose to explore pivot_longer() because reshaping data from wide to long format is often required before plotting and modeling. I wanted to understand how to convert multiple measurement columns into tidy format usable in ggplot and dplyr workflows. 
 
@@ -281,7 +281,7 @@ Initialize project:
 ## 
 ## # Installing packages --------------------------------------------------------
 ## [32m✔[0m renv 1.2.0                               [linked from cache]
-## Successfully installed 1 package in 36 milliseconds.
+## Successfully installed 1 package in 44 milliseconds.
 \end{verbatim}
 
 \begin{Shaded}
@@ -298,7 +298,7 @@ Initialize project:
 ## 
 ## # Installing packages --------------------------------------------------------
 ## [32m✔[0m dplyr 1.2.1                              [linked from cache]
-## Successfully installed 1 package in 11 milliseconds.
+## Successfully installed 1 package in 13 milliseconds.
 \end{verbatim}
 
 \begin{Shaded}
