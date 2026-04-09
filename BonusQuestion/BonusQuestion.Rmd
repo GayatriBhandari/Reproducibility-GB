@@ -3,17 +3,18 @@ title: "BonusQuestion"
 author: "GB"
 date: "2026-04-09"
 output: 
-  pdf_document: default
-  md_document:
-    variant: gfm
   html_document:
     df_print: paged
+  md_document:
+    variant: gfm
+  pdf_document: default
   word_document:
      toc: true 
 ---
 
-# 1
-Give me notes on the recap material. These questions focus on material that students commonly struggle with (data wrangling, plotting, modeling, or debugging). 
+# 1 notes on the recap material
+These questions focus on material that students commonly struggle with (data wrangling, plotting, modeling, or debugging). 
+
 Ans: Data wrangling (dplyr)
 Select () chooses columns
 Filter() keeps rows based on conditions
@@ -100,47 +101,91 @@ Example:
 str(df)
 names(df)
 
-# 2
-Complete one of the extra optional materials provided, OR explore a topic of your choice, or find a topic online and explore the code and how it works.
+### Pipes %>%
+Confusing
+library(tidyverse)
+microbiome.fungi <- read.csv(file.choose())
+str(microbiome.fungi)
+microbiome.fungi2 <- select(microbiome.fungi, SampleID, Crop, Compartment:Fungicide, richness)
+str(microbiome.fungi2)
+head(filter(microbiome.fungi2, Treatment == "Conv.")) 
+microbiome.fungi %>%
+  select(SampleID, Crop, Compartment:Fungicide, richness) %>%  
+  filter(Treatment == "Conv.") %>%                             
+  mutate(logRich = log(richness)) %>%                         
+  head() 
+```
+
+### Grouping and summarising
+confusing
+
+microbiome.fungi %>%
+  select(SampleID, Crop, Compartment:Fungicide, richness) %>%
+  group_by(Treatment, Fungicide) %>%        # define groups
+  mutate(logRich = log(richness)) %>%       # uses groups but keeps rows
+  summarise(Mean.rich = mean(logRich),      # 1 row per group
+            n = n(),
+            sd.dev = sd(logRich)) %>%
+  mutate(std.err = sd.dev / sqrt(n))
+
+# 2 explore a topic of your choice
+
 Ans: I chose to explore pivot_longer() because reshaping data from wide to long format is often required before plotting and modeling. I wanted to understand how to convert multiple measurement columns into tidy format usable in ggplot and dplyr workflows. 
-Example: library(tidyr)
+
+Example: 
+
+
+library(tidyr)
 
 long_df <- df %>%
 pivot_longer(cols = starts_with("rep"),
 names_to = "replicate",
 values_to = "value")
+
 It is useful to
 •	Easier plotting
 •	Easier grouping
 •	Tidy data structure
 
-# 3
-Introduction to renv. 
+
+also;
+I chose to explore how to plot graphs in R using ggplot2. I picked this topic because plotting is essential for exploring and communicating patterns in data, and I want to become more comfortable creating clear, publication-quality figures. 
+
+
+library(ggplot2)
+
+ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) + 
+  geom_point(size = 2) +
+  geom_smooth(method = "lm", se = TRUE) +
+  labs(
+    title = "MPG vs Weight by Cylinders",
+    x = "Weight (1000 lbs)",
+    y = "Miles per gallon",
+    color = "Cylinders"
+  ) +
+  theme_minimal()
+```
+
+I wanted to learn how each piece of the code works: how aes() maps variables to x, y, and color, how geom_point() and geom_smooth() stack as layers, and how functions like labs() and theme_minimal() change the non-data elements of the graph to improve readability.
+
+# 3 Introduction to renv. 
 •	Follow the coding demonstration in class. Turn in notes. 
 
-Ans: renv Notes
+Ans: renv Notes: renv is an R package for project‑specific package libraries that improves reproducibility and portability. It creates a local library folder for each project plus a renv.lock file that records exact package names and versions used.
+
 Purposes:
 • creates Reproducible R environments
 • tracks package versions
 • allows others to run code without errors
 
 Initialize project:
-
+```{r}
 install.packages("renv")
 renv::init()
-
-Install packages:
-
 install.packages("dplyr")
-
-Snapshot packages:
-
 renv::snapshot()
-
-Restore environment:
-
 renv::restore()
-
+```
 Files created:
 
 renv.lock → package versions
