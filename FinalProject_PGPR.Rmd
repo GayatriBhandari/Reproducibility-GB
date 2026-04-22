@@ -1,0 +1,134 @@
+---
+title: "GB_FinalProject"
+author: "GB"
+date: "2026-04-21"
+output: html_document
+---
+
+# Loading all required libraries and set chunk options
+```{r setup, include=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(lme4)
+library(emmeans)
+library(lmerTest)
+library(dplyr)
+library(multcompView)
+library(multcomp)
+library(fs)
+```
+
+
+# Loading the dataset
+
+```{r}
+mortality <- read.csv("Mortality.csv")
+head(mortality)
+```
+# Calculate percent mortality for each observation
+$$ ((InitialJ2 - FinalJ2) / InitialJ2) * 100 $$
+
+
+```{r}
+Mortality <- mortality %>% 
+   mutate(Mortality_percent = ((initialJ2 - finalJ2) / initialJ2) * 100)
+head(Mortality)
+```
+
+
+# Summary Statistics by Treatment
+```{r}
+summary_stats <- Mortality %>%
+  group_by(Treatment) %>% # Group by treatment and calculate mean, SD, SE
+  summarise(n = n(),
+    mean_mortality = mean(Mortality_percent),
+            sd_mortality = sd(Mortality_percent),
+            se = sd_mortality/n )
+
+# # Display as table
+
+knitr::kable(summary_stats)
+
+```
+
+# selecting Top Treatments with Mean mortality higher than 50% and untreated control
+
+```{r}
+# Filter strains with >50% mortality or named 'UntreatedControl'
+selected_strains <- summary_stats %>%
+  filter(mean_mortality > 25 | Treatment == "UntreatedControl")
+selected_strains
+
+```
+
+
+# Plot Manuscript-Ready Figure
+```{r}
+# Barplot of selected treatments, color-coded with red for Untreatedcontrol and green for Fluopyram
+ggplot(selected_strains, aes(x = reorder(Treatment, -mean_mortality), y = mean_mortality, color="black")) +
+  geom_col(aes(fill = Treatment == "UntreatedControl")) +
+   scale_fill_manual(values = c("TRUE" = "red", "FALSE" = "blue")) +
+  geom_col(aes(fill = Treatment == "Fluopyram")) +
+  scale_fill_manual(values = c("TRUE" = "Black", "FALSE" = "blue")) +
+  geom_text(aes(label = round(mean_mortality, 1)), hjust = -0.1, size = 3) +
+  coord_flip() +
+  ylab(" Mortality (%)") +
+  xlab("PGPR Strain") +
+  ggtitle("PGPR Strains with >25% Mortality + UntreatedControl") +
+   theme_minimal(base_size = 10) +
+  theme(plot.title = element_text(hjust = 0.5),
+        legend.position = "none")
+
+```
+
+
+
+
+# Mixed Effects Model (GLMM)
+
+```{r}
+# Convert grouping variables to factors
+Mortality$Treatment <- as.factor(Mortality$Treatment)
+Mortality$Replication <- as.factor(Mortality$Replication)
+```
+
+
+```{r}
+# Linear mixed model with rep as random effect
+mod <- lmer(Mortality_percent  ~ Treatment + (1|Replication),
+             data = Mortality)
+# Summary of the model, includes fixed effects and random structure
+summary(mod)
+ 
+```
+
+
+# ANOVA and LSMeans
+```{r}
+# ANOVA model
+anova_mod <- aov(Mortality_percent ~ Treatment + Replication, data = Mortality)
+summary(anova_mod)
+
+# Calculate estimated marginal means (LSMeans) with Benferroni adjustment
+lsm <- emmeans(anova_mod, pairwise ~ Treatment, adjust = "bon")
+```
+
+
+
+
+
+# Treatment vs Fluopyram Comparison
+```{r}
+Fluopyram <- contrast(lsm, "trt.vs.ctrl", ref = 1, adjust = "bon") # Compare each treatment to a reference (Fluopyram = 1)
+Fluopyram 
+
+```
+
+# Treatment vs Untreated Control comparison
+```{r}
+untreatedcontrol <- contrast(lsm, "trt.vs.ctrl", ref = 217, adjust = "bon") # Compare each treatment to UntreatedControl (Untreated Control = 217)
+untreatedcontrol
+```
+
+
+
